@@ -1,3 +1,7 @@
-1. What is a robots pose: A robots pose is determined by x, y and Theta.
-2. What do x,y and Theta each represent: x is for horizontal movement, y is for vertical movement and theta is for the angle.
-3. What happens to x,y and theta when a robot srives foward without turning: Only the y axis will increse since the robot is moving foward and handles vertical movement up and down. x and theta will not do anything since the robot is not moving horizontally and is not turing at angle.
+1. What is a robots pose: A robots pose is determined by x, y and Theta. Pose is the complete description of a robot's position AND orientation. Position alone isn's enough - two robots at (3,2) can face completly different directions.
+ 
+2. What do x,y and Theta each represent: x is for the horizontal position, y is for the vertical position and theta is the direction the robot is facing, measured counterclockwise from the +x axis.
+   
+3. What happens to x,y and theta when a robot srives foward without turning: Only x and y will be affected and theta will be the same because the robot is moving to a new position.
+
+What I got wrong: I misunderstood theta meaning movement when it actually means the direction the robot is facing.
