@@ -1,6 +1,6 @@
-What a Vector is: A Vector is the distance and maginitude of a robots movement. with direction meaning direction, and maginitude meaning its length.
+What a Vector is: A Vector has two properties, direction (which way) and magnitude (how far). It is written as (vx, vy) and drawn as an arrow.
 
-The Magnitude Formula: |v| = /(vx^2 + vy^2) (Its essentially the pythagorean theorem but to calculate the maginitude)
+The Magnitude Formula: |v| = √(vx^2 + vy^2) (Its essentially the pythagorean theorem but to calculate the maginitude)
 
 
           ●  ← tip of vector (vx, vy)
