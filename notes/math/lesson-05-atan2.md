@@ -1,4 +1,4 @@
-The three-step algorithim: First you solve for delta x and delta y, then you use the magnitude formula to get the maginitude of the angle which then gives you the direction.
+The three-step algorithim: First you solve for delta x and delta y, then you use the magnitude formula to get the maginitude of the angle which then gives you the direction. 
 
 The arctan failiure and why atan2 fixeses it: arctan shares the same information with delta x and delta y since it uses thier ratio. atan2 looks at delta x and delta y individually to get the proper angle.
 
@@ -20,4 +20,4 @@ southwest |  southeast
 
 The parenteses rule: Always write (delta x)^2, not - deltax^2.
 
-What I got wrong and fixed: I struggled heavily with trying to calculate delta x and delta y individually aswell as just doing the ssteps wrong in general. After learning the technique of subtracting the x2,x1 and y2,y1 I was abel to successfully solve those kinds of problems. 
+What I got wrong and fixed: I struggled heavily with trying to calculate delta x and delta y individually aswell as just doing the steps wrong in general. After learning the technique of subtracting the x2,x1 and y2,y1 I was abel to successfully solve those kinds of problems. 
