@@ -20,4 +20,4 @@ southwest |  southeast
 
 The parenteses rule: Always write (delta x)^2, not - deltax^2.
 
-What I got wrong and fixed: I struggled heavily with trying to calculate delta x and delta y individually aswell as just doing the ssteps wrog for finding   
+What I got wrong and fixed: I struggled heavily with trying to calculate delta x and delta y individually aswell as just doing the ssteps wrong in general. After learning the technique of subtracting the x2,x1 and y2,y1 I was abel to successfully solve those kinds of problems. 
