@@ -1,0 +1,27 @@
+PHASE 1 ROADMAP — SUMMER 2026
+════════════════════════════════════════════════════
+
+MATH FOUNDATION
+     Lesson 1 — What is a Robot
+     Lesson 2 — Robot Pose (x, y, θ)
+     Lesson 3 — Trigonometry (sin, cos, movement)
+     Lesson 4 — Vectors + Magnitude          ← YOU ARE HERE
+
+     Lesson 5 — Vector Direction (atan2)
+     Lesson 6 — Linear Algebra basics
+                (2D rotation — how robots turn)
+
+CODING TOOLS
+     Lesson 7 — Git workflow + Linux terminal
+
+PYTHON
+     Lesson 8  — Variables, types, math module
+     Lesson 9  — Functions
+     Lesson 10 — Conditionals + Loops
+     Lesson 11 — Lists and Dictionaries
+     Lesson 12 — Classes and Objects (Robot class)
+     Lesson 13 — File I/O and logging
+
+════════════════════════════════════════════════════
+  ★  PHASE 1 PROJECT — Python Robot Sensor Simulator
+════════════════════════════════════════════════════
