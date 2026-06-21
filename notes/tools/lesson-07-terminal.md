@@ -9,3 +9,5 @@ One of the first commands I have learned is pwd, which means: print working dire
 When I frirst typed pwd and press enter it showed me my location which was the C: drive, the users folder and my home folder.
 
 The second command I learned is ls, which means list and it shows me every file in my current location.
+
+The third command I learned is cd, which means change directory and it moves you into a new folder which is kind of like double clicking a folder.
