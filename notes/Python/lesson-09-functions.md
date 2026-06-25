@@ -2,7 +2,10 @@ What a function is: A function is a repeatable block of code designed to take in
 
 What def means: def means that you are defining a function, and must be the first word written when creating the a function and before naming the function. 
 
-What id/elif/else does: if, elif and else are conditional statements that can help your code act under certain parameters, in a function however only one line with specific parameters will run if the code meets that parameter.
+What if/elif/else does: if, elif and else are conditional statements that can help your code act under certain parameters, however only one line with specific parameters will run if the program meets that parameter.
+
+What return does: return sends a value back out of the function to whoever called it. Without return, the function runs but gives nothing back.
+
 
 Angle to quadrant table:
 
