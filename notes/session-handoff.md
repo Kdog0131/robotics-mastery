@@ -17,9 +17,8 @@ Started: June 2026
 
 ## Current position
 Phase 1, Summer 2026
-Last completed: Lesson 10 — Loops
-Next: Lesson 11 — Lists and Dictionaries
-Then: Lesson 12 — Classes
+Last completed: Lesson 11 — Lists and Dictionaries
+Next: Lesson 12 — Classes
 Then: Lesson 13 — File I/O
 Then: Phase 1 Project — Python Robot Sensor Simulator
 
