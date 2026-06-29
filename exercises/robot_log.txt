@@ -1,0 +1,4 @@
+Robot: Scout
+Starting positions: 0.0 0.0
+Front sensor: 5.2
+Updated front sensor: 0.3
