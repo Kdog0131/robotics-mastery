@@ -18,7 +18,25 @@ robot_1 = Robot(0.0, 0.0, 5.2, "Scout") #Here I made a Robot_1 variable and have
 
 print(robot_1.name, robot_1.x, robot_1.y, robot_1.front_sensor) #Here I made a print statement that prints the robots name, its two coordinates and the front sensor reading/distance.
 
+with open("sensor_log.txt", "w") as f: #Here we create a file named sensor_log and have it be in "w" mode so that the file gets created and clears the readings each time the program is runned.
+    f.write("")
+
 #Here we make a for loop and have it increment 5 times.
 for i in range(5):
     robot_1.front_sensor = 5.2 - (i * 0.3) #Inside the for loop we calculate a new sensor reading based on 5.2 minus a small amount each tick, and store that new value into the robot's front_sensor attribute. 
     print(robot_1.front_sensor) #Here we make a print statement to see the results of the subtraction after the five increments.
+    with open("sensor_log.txt", "a") as f: #Here we open the sensor_readings file and have it be in "a" mode so that the for loop can keep adding to it.
+        f.write("Tick: " + str(i) + " Sensor: " + str(robot_1.front_sensor) + "\n") #Every time the for loop increments, we add the increment number and the reading from the front sensor and repeat on a new line every increment.
+          
+    #Here we make an if statement that checks to see if robot_1s front sensor reading is less then 0.5 before printing ethier collision iminnent or all is well.
+    #If the value front_sensor is holding drops below 0.5 then collision imminent will print.
+    if robot_1.front_sensor < 0.5:
+       print("Collission Imminent!")
+    else:
+       print("All is well")
+   
+with open("sensor_log.txt", "r") as f: #Here we open sensor_log in "r" mode so that we can read what was sent to the file from the for loop.
+    contents = f.read() #Here we make a contents variable and inside it we have the file use the read function read everything in it.
+    print(contents) #Here we make a print statement and inside it have the contents variable in its argument so that it prints out what the file recorded.
+
+    
