@@ -17,9 +17,9 @@ Started: June 2026
 
 ## Current position
 Phase 1, Summer 2026
-Last completed: Lesson 12 — Classes
-Next: Lesson 13 — File I/O
-Then: Phase 1 Project — Python Robot Sensor Simulator
+Last completed: Phase 1 Project - Robot class + mission loop
+Next: Phase 1 Project - obstacle check + file logging inside the loop
+
 
 ## Files in repo
 exercises/robot_pose.py
