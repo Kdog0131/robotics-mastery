@@ -24,9 +24,9 @@ with open("sensor_log.txt", "w") as f: #Here we create a file named sensor_log a
 #Here we make a for loop and have it increment 5 times.
 for i in range(5):
     robot_1.front_sensor = 5.2 - (i * 0.3) #Inside the for loop we calculate a new sensor reading based on 5.2 minus a small amount each tick, and store that new value into the robot's front_sensor attribute. 
-    print(robot_1.front_sensor) #Here we make a print statement to see the results of the subtraction after the five increments.
+    print(round(robot_1.front_sensor, 2))#Here we make a print statement to see the results of the subtraction after the five increments, inside the print statement we use the round function and have front_sensor be placed in its argument along with a two so that only the firat two decimals will be shown in the output.
     with open("sensor_log.txt", "a") as f: #Here we open the sensor_readings file and have it be in "a" mode so that the for loop can keep adding to it.
-        f.write("Tick: " + str(i) + " Sensor: " + str(robot_1.front_sensor) + "\n") #Every time the for loop increments, we add the increment number and the reading from the front sensor and repeat on a new line every increment.
+        f.write("Tick: " + str(i) + " Sensor: " + str( round(robot_1.front_sensor, 2) ) + "\n") #Every time the for loop increments, we add the increment number and the reading from the front sensor and repeat on a new line every increment, we also convert the robot_1 objects front_sensor attribute into a string and have it be wrapped inside of the round functions parameters with a two so that only the first two decimals are printed.
           
     #Here we make an if statement that checks to see if robot_1s front sensor reading is less then 0.5 before printing ethier collision iminnent or all is well.
     #If the value front_sensor is holding drops below 0.5 then collision imminent will print.
