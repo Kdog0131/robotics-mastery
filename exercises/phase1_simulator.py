@@ -35,8 +35,13 @@ for i in range(5):
     else:
        print("All is well")
    
-with open("sensor_log.txt", "r") as f: #Here we open sensor_log in "r" mode so that we can read what was sent to the file from the for loop.
+#Here we use a try/except so that we can throw an error if the sensor_log file cannot be read or open.   
+try:
+ with open("sensor_log.txt", "r") as f: #Here we open sensor_log in "r" mode so that we can read what was sent to the file from the for loop.
     contents = f.read() #Here we make a contents variable and inside it we have the file use the read function read everything in it.
     print(contents) #Here we make a print statement and inside it have the contents variable in its argument so that it prints out what the file recorded.
+except Exception as e:
+    print("Could not read the log file", e) #This is the error that will be thrown in the except block.
+
 
     
