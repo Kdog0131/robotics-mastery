@@ -14,6 +14,13 @@ class Robot:
         self.front_sensor = front_sensor #Here I created a front_sensor attribute.
         self.name = name #Here I created a name attribute.
 
+    def check_obstacle(self, threshold=0.5): #Here we made a check_obstacle method so that we can create a specific threshold condition for when a robot is about to collide with an object.
+     if self.front_sensor < threshold: #If the front_sensors value as its decreacing is less then what the threshold variable is holding in the methods parameters, then it will print "warning collision imminent".
+      print("Warning Collision Imminent")
+     else: #If the front_sensors value as its decreacing is not less then what the threshold variable is holding in the methods parameters, then it will print "No Collision Detected".
+      print("No collision detected")
+      
+   
 robot_1 = Robot(0.0, 0.0, 5.2, "Scout") #Here I made a Robot_1 variable and have it create a robot object with 0.0 as the x-coordinate, 0.0 for the y-coordinate, 5.2 for the front-sensor reading/distance, and Scout as the name.
 
 print(robot_1.name, robot_1.x, robot_1.y, robot_1.front_sensor) #Here I made a print statement that prints the robots name, its two coordinates and the front sensor reading/distance.
@@ -27,13 +34,7 @@ for i in range(5):
     print(round(robot_1.front_sensor, 2))#Here we make a print statement to see the results of the subtraction after the five increments, inside the print statement we use the round function and have front_sensor be placed in its argument along with a two so that only the firat two decimals will be shown in the output.
     with open("sensor_log.txt", "a") as f: #Here we open the sensor_readings file and have it be in "a" mode so that the for loop can keep adding to it.
         f.write("Tick: " + str(i) + " Sensor: " + str( round(robot_1.front_sensor, 2) ) + "\n") #Every time the for loop increments, we add the increment number and the reading from the front sensor and repeat on a new line every increment, we also convert the robot_1 objects front_sensor attribute into a string and have it be wrapped inside of the round functions parameters with a two so that only the first two decimals are printed.
-          
-    #Here we make an if statement that checks to see if robot_1s front sensor reading is less then 0.5 before printing ethier collision iminnent or all is well.
-    #If the value front_sensor is holding drops below 0.5 then collision imminent will print.
-    if robot_1.front_sensor < 0.5:
-       print("Collission Imminent!")
-    else:
-       print("All is well")
+    robot_1.check_obstacle() #Here I have the robot object call the check_obstacle method that was made so that it can check to see if the robot will collide or not, we also dont give it any parameters so that it uses the default value of 0.5 thats already in the method.
    
 #Here we use a try/except so that we can throw an error if the sensor_log file cannot be read or open.   
 try:
