@@ -22,6 +22,8 @@ class Robot:
       
 
 robot_1 = Robot(0.0, 0.0, 5.2, "Scout") #Here I made a Robot_1 variable and have it create a robot object with 0.0 as the x-coordinate, 0.0 for the y-coordinate, 5.2 for the front-sensor reading/distance, and Scout as the name.
+robot_2 = Robot(10.0, 5.0, 1.2, "Guard") #Here I made a Robot_2 object and gave it 10.0 for the x position, 5.0 for the y position, 1.2 for the front_sensor, and Guard for the name.
+print(robot_2.name, robot_2.x, robot_2.y, robot_2.front_sensor)
 
 starting_position = (robot_1.x, robot_1.y) #Here I made a starting_position variable and inside of it I have it store the robot_1 objects x and y coordinate potitions as a tuple so that they wont change.
 print(starting_position) #Here I made a print statement that will print out what the robot_1 object sstarting position is based on what the starting_position variable is storing.
