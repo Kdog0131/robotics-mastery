@@ -29,8 +29,17 @@ robot_3 = Robot(6.5, -1.9, 3.2, "Knight") #Here I made a robot_3 object with 6.5
 robot_4 = Robot(7.2, 0.0, 2.5, "Archer") #Here I made a robot_4 object with 7.2 as the x coordinate value, 0.0 as the y coordinate value, 2.5 as the front sensor value and Archer as the name.
 robot_5 = Robot(-1.1, -8.5, 5.0, "King") #Here I made a robot_5 object with -1.1 as the x coordinate value, -8.5 as the y coordinate value, 5.0 as the front sensor value and King as the name.
 
-fleet = [robot_1, robot_2, robot_3, robot_4, robot_5] #Here i made a fleet variable and inside it I have it store a list which holds the five robot objects.
+fleet = [robot_1, robot_2, robot_3, robot_4, robot_5] #Here I made a fleet variable and inside it I have it store a list which holds the five robot objects.
 
 for robot in fleet: #Here I made a for loop with a loop variable named robot and have it specifically use the fleet variable and the list its storing.
     print(robot.name, robot.x, robot.y, robot.front_sensor) #Here I make a print statement that will print out each robots name, x coordinate value, y coordinate value, front_sensor value and name.
+
+for i in range(5): #Here I made a for loop with a loop variable named i and set the range to 5 so that anything inside the for loop will loop five times.
+    for robot in fleet: #Here I made a for loop with a loop variable named robot and have it specifically use the fleet variable and the list its storing.
+        
+        robot.front_sensor = robot.front_sensor - (i * 0.2) #Here I have the robot object refer to its own front_sensor adn then we take the increment number represented by i multiplied by 0.2 and subtract ot from the robots front_sensor value.
+
+        is_danger, sensor_value = robot.check_obstacle() #Here I make a is_danger variable and a sensor_value variable and inside both I have the robot object called the check_object method so that both variables take the value from the check_obstacle() method being called.
+        
+        print(robot.name, "Tick", i, "- Sensor:", round(robot.front_sensor, 2), "- Danger:", is_danger) #Here I made a print statement that will print out the robots name, "Tick", the increment number represented by i, the robots front_sensor value rounded two decimal places, "- Danger" and the condition of whather or not a robot is in danger of collision which will be true or false.
 
