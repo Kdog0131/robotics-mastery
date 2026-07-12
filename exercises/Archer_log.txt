@@ -1,0 +1,5 @@
+Archer Tick: 0 Sensor: 2.5 Danger: False
+Archer Tick: 1 Sensor: 2.3 Danger: False
+Archer Tick: 2 Sensor: 1.9 Danger: False
+Archer Tick: 3 Sensor: 1.3 Danger: False
+Archer Tick: 4 Sensor: 0.5 Danger: True

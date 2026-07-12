@@ -1,0 +1,5 @@
+Knight Tick: 0 Sensor: 3.2 Danger: False
+Knight Tick: 1 Sensor: 3.0 Danger: False
+Knight Tick: 2 Sensor: 2.6 Danger: False
+Knight Tick: 3 Sensor: 2.0 Danger: False
+Knight Tick: 4 Sensor: 1.2 Danger: False

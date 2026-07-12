@@ -21,7 +21,11 @@ class Robot:
         if self.front_sensor < threshold:
             return True, self.front_sensor
         else:
-            return False, self.front_sensor 
+            return False, self.front_sensor
+      
+
+        
+
 
 robot_1 = Robot(2.5, 3.6, 1.0, "Scout") #Here I made a robot_1 object with 2.5 as the x coordinate value, 3.6 as the y coordinate value, 1.0 as the front sensor value and Scout as the name.
 robot_2 = Robot(-1.5,-2.1, 0.0, "Guard") #Here I made a robot_2 object with -1.5 as the x coordinate value, -2.1 as the y coordinate value, 0.0 as the front sensor value and Guard as the name.
@@ -31,8 +35,14 @@ robot_5 = Robot(-1.1, -8.5, 5.0, "King") #Here I made a robot_5 object with -1.1
 
 fleet = [robot_1, robot_2, robot_3, robot_4, robot_5] #Here I made a fleet variable and inside it I have it store a list which holds the five robot objects.
 
+
+
+
 for robot in fleet: #Here I made a for loop with a loop variable named robot and have it specifically use the fleet variable and the list its storing.
     print(robot.name, robot.x, robot.y, robot.front_sensor) #Here I make a print statement that will print out each robots name, x coordinate value, y coordinate value, front_sensor value and name.
+
+
+warned_robots = set() #Here I made a warned_robots variable and inside of it I have it store an empty set.
 
 for i in range(5): #Here I made a for loop with a loop variable named i and set the range to 5 so that anything inside the for loop will loop five times.
     for robot in fleet: #Here I made a for loop with a loop variable named robot and have it specifically use the fleet variable and the list its storing.
@@ -41,5 +51,17 @@ for i in range(5): #Here I made a for loop with a loop variable named i and set 
 
         is_danger, sensor_value = robot.check_obstacle() #Here I make a is_danger variable and a sensor_value variable and inside both I have the robot object called the check_object method so that both variables take the value from the check_obstacle() method being called.
         
-        print(robot.name, "Tick", i, "- Sensor:", round(robot.front_sensor, 2), "- Danger:", is_danger) #Here I made a print statement that will print out the robots name, "Tick", the increment number represented by i, the robots front_sensor value rounded two decimal places, "- Danger" and the condition of whather or not a robot is in danger of collision which will be true or false.
+        filename = robot.name + "_log.txt" #Here I made a filename variable and I have it set to the robot objects name and a string called _log.text to help with identifiying  each robot object that is tied to a different textfile.
+
+        #Here I made a with open that uses the filename variable and have it be in "a" mode and is represented by f.
+        with open(filename, "a") as f:
+            f.write(robot.name + " Tick: " + str(i) + " Sensor: " + str(round(robot.front_sensor, 2)) + " Danger: " + str(is_danger) + "\n") #Here I have the file write the robot objects name, the increment number converted to a string, the front_sensor values rounded number two decimal places converted into a string, the is_danger variable and \n so that the information is printed on a new line every increment.
+        
+        #Here I made an if statement that uses the is_danger method, it will add a the robot objects name to the warned_robots set everytime is_danger is read.
+        if is_danger:
+            warned_robots.add(robot.name)
+
+        print(robot.name, "Tick ", i, "- Sensor: ", round(robot.front_sensor, 2), "- Danger: ", is_danger) #Here I made a print statement that will print out the robots name, "Tick", the increment number represented by i, the robots front_sensor value rounded two decimal places, "- Danger" and the condition of whather or not a robot is in danger of collision which will be true or false.
+
+print("Robots that triggered a warning:", warned_robots) #Here I made a print statement that will show all of the robots that were warned in the set.
 

@@ -1,0 +1,5 @@
+King Tick: 0 Sensor: 5.0 Danger: False
+King Tick: 1 Sensor: 4.8 Danger: False
+King Tick: 2 Sensor: 4.4 Danger: False
+King Tick: 3 Sensor: 3.8 Danger: False
+King Tick: 4 Sensor: 3.0 Danger: False

@@ -1,0 +1,5 @@
+Scout Tick: 0 Sensor: 1.0 Danger: False
+Scout Tick: 1 Sensor: 0.8 Danger: False
+Scout Tick: 2 Sensor: 0.4 Danger: True
+Scout Tick: 3 Sensor: -0.2 Danger: True
+Scout Tick: 4 Sensor: -1.0 Danger: True
