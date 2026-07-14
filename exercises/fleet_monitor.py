@@ -44,12 +44,19 @@ for robot in fleet: #Here I made a for loop with a loop variable named robot and
 
 warned_robots = set() #Here I made a warned_robots variable and inside of it I have it store an empty set.
 
+for robot in fleet: #Here I made a for loop with a loop variable named robot that will go through the entire list that the fleet variable is holding.
+    filename = robot.name + "_log.txt" #Here I made a filename variable and inside it I have the robot object use its named attribute and have a string "_log.txt".
+    with open(filename, "w") as f: #Here I made a with open that has the filename variable as its parameter and have it be in "w" mode so that it resets the text file everytime the program is runned, I also have it be represented as the variable f.
+        f.write("") #Here I have the with open use the write function to write "" in the file.
+
+
+
 for i in range(5): #Here I made a for loop with a loop variable named i and set the range to 5 so that anything inside the for loop will loop five times.
     for robot in fleet: #Here I made a for loop with a loop variable named robot and have it specifically use the fleet variable and the list its storing.
         
-        robot.front_sensor = robot.front_sensor - (i * 0.2) #Here I have the robot object refer to its own front_sensor adn then we take the increment number represented by i multiplied by 0.2 and subtract ot from the robots front_sensor value.
+        robot.front_sensor = robot.front_sensor - (i * 0.2) #Here I have the robot object refer to its own front_sensor and then we take the increment number represented by i multiplied by 0.2 and subtract ot from the robots front_sensor value.
 
-        is_danger, sensor_value = robot.check_obstacle() #Here I make a is_danger variable and a sensor_value variable and inside both I have the robot object called the check_object method so that both variables take the value from the check_obstacle() method being called.
+        is_danger, sensor_value = robot.check_obstacle() #Here I make a is_danger variable and a sensor_value variable and inside both I have the robot object called the check_obstacle method so that both variables take the value from the check_obstacle() method being called.
         
         filename = robot.name + "_log.txt" #Here I made a filename variable and I have it set to the robot objects name and a string called _log.text to help with identifiying  each robot object that is tied to a different textfile.
 
@@ -63,5 +70,14 @@ for i in range(5): #Here I made a for loop with a loop variable named i and set 
 
         print(robot.name, "Tick ", i, "- Sensor: ", round(robot.front_sensor, 2), "- Danger: ", is_danger) #Here I made a print statement that will print out the robots name, "Tick", the increment number represented by i, the robots front_sensor value rounded two decimal places, "- Danger" and the condition of whather or not a robot is in danger of collision which will be true or false.
 
+print("Total robots in fleet:", len(fleet)) #Here I made a print that prints out the total number of robots in the entire fleet list.
+
 print("Robots that triggered a warning:", warned_robots) #Here I made a print statement that will show all of the robots that were warned in the set.
 
+#Here I made a try/except block so that I can create the functionality for when the Guard_log.txt file is being read and the error that will be thrown of it cant be read.
+try:
+    with open("Guard_log.txt", "r") as f: #Here I made a with open that will open the Guard_log.txt file in "r" mode and have it be represented as the variable f.
+        contents = f.read() #Here I made a contents variable and inside of it I have the file read itself using the read function.
+        print(contents) #Here I made a print statement that will print that the contents variable is storing which is everything being read in the Guard_log file.
+except Exception as e: #Here in the except clause I have the exception be represented by e.
+    print("Could not read the log file", e) #Here I made a Print that will tell the user the file could not be read.
