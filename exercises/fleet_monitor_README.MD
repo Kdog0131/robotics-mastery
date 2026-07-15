@@ -20,6 +20,7 @@ The program creates 5 `Robot` objects, each with a unique name, position, and fr
 1. Open a terminal (Git Bash or similar)
 2. Navigate to the exercises folder: 
 3. Run the program:
+4. View a sample log file: cat Guard_log.txt
 
 ## What I'm proud of
 
