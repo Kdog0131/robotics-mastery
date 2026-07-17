@@ -17,9 +17,10 @@ Started: June 2026
 
 ## Current position
 Phase 1, Summer 2026
-Last completed: Phase 1 Project - Robot class + mission loop
-Next: Phase 1 Project - obstacle check + file logging inside the loop
-
+Last completed: Piller 1 - Trigonometry basics (cos/sin robot movement, degrees-to-radians conversion) in trig_movement.py
+Next: Continue Pillar 1 - more trig practice with different angles, then vectors.
+Completed Projects: Phase 1 (Sensor Simulator) and Phase 2 (Fleet Monitor), Both Documented and posted to Linkedin.
+Foundation complete: Python fundementals through classes, file I/O, error handling, sets/tuples, git branching.
 
 ## Files in repo
 exercises/robot_pose.py
