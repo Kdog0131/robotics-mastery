@@ -16,11 +16,25 @@ Started: June 2026
 - Projects at end of each phase
 
 ## Current position
-Phase 1, Summer 2026
-Last completed: Piller 1 - Trigonometry basics (cos/sin robot movement, degrees-to-radians conversion) in trig_movement.py
-Next: Continue Pillar 1 - more trig practice with different angles, then vectors.
-Completed Projects: Phase 1 (Sensor Simulator) and Phase 2 (Fleet Monitor), Both Documented and posted to Linkedin.
-Foundation complete: Python fundementals through classes, file I/O, error handling, sets/tuples, git branching.
+Pillar 1, Math for Robotics — Summer 2026 (continuing)
+
+Covered previously (June 2026), needs review: Robot pose, trigonometry 
+(sin/cos movement), vectors + magnitude, atan2 for direction, 
+2D rotation matrices — NOT confirmed mastered, hasn't been reviewed 
+in several weeks
+
+Last completed (most recent session): Quick trigonometry refresher — 
+single-angle cos/sin robot movement calculation in trig_movement.py
+
+Next: Review and rebuild vectors, atan2, and rotation matrices from 
+the ground up before moving forward in Pillar 1
+
+Completed Projects: 
+- Phase 1 (Python Robot Sensor Simulator) — complete, documented, LinkedIn posted
+- Phase 2 (Multi-Robot Fleet Monitor) — complete, documented, LinkedIn posted
+
+Foundation complete: Python fundamentals through classes, file I/O, 
+error handling, sets/tuples, git branching
 
 ## Files in repo
 exercises/robot_pose.py
