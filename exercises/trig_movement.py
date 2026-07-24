@@ -24,3 +24,12 @@ print(round(theta_radians, 2)) #Here I make a print statement that will print ou
 
 print("New position:", round(new_x, 2), round(new_y, 2)) #Here I make a print statement that prints New Position and the new x and y coordinate numbers that are rounded two decimal places.
 
+def get_distance_and_directions(dx, dy): #Here I made a function named get_distance_and_directions with dx and dy in its parameters.
+    magnitude = math.sqrt(dx**2 + dy**2) #Here I made a magnitude variable and inside it I have the math import use its sqrt function so that anything inside the parenteses will be squared, I put dx and dy in the parenteses and gave them both ** power operators so that they are squared aswell as + sign to add them both.
+    direction = math.atan2(dy,dx) #Here I made a direction variable and inside it I have the math import use its atan2 function so that the program gives the angle and direction from dx and dy since we put dx and dy in the parenteses.
+    direction_degrees = math.degrees(direction) # Here I made a direction_degrees variable and inside it I have the math import use its degrees functions so that the program will output the degrees using the direction variables information.
+    return magnitude, direction_degrees #Here I made a return that returns the results of the magnitude and direction_degrees variable.
+
+result_magnitude, result_direction = get_distance_and_directions(3, 4) #Here I chain the result_magnitude and result direction variables and have them equal the get_distance_and_directions function with 3 and 4 in its parameters so that both variables are tied to the result of the function call.
+print("Magnitude:", round(result_magnitude,2)) #Here I made a print that prints Magnitude: and the magnitude result rounded 2 decimal places.
+print("Direction (degrees): ", round(result_direction, 2)) #Here I made a print that prints Direction (degrees): and the direction result rounded 2 decimal places.
