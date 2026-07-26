@@ -30,6 +30,14 @@ def get_distance_and_directions(dx, dy): #Here I made a function named get_dista
     direction_degrees = math.degrees(direction) # Here I made a direction_degrees variable and inside it I have the math import use its degrees functions so that the program will output the degrees using the direction variables information.
     return magnitude, direction_degrees #Here I made a return that returns the results of the magnitude and direction_degrees variable.
 
+def rotate_point(x,y,theta_degrees): #Here I made a function named rotate_point with x,y and theta_degrees in its parameters.
+    theta_radians = math.radians(theta_degrees) #Here I made a theta_radians variable and inside it I have the math import use its radians function with theta_degrees inside its parameters so that it can convert the number that theta_degrees has into radians.
+    new_x = math.cos(theta_radians) * x - math.sin(theta_radians) * y #Here I made a new_x variable and inside it I have the math input use its cos function with theta_radians inside of it multipied by the number the x variable is holding, I then subtract that by the number that theta_radians is holding in the math imports sin function which is being multiplied by the number the y variable is holding.
+    new_y = math.sin(theta_radians) * x + math.cos(theta_radians) * y #Here I made a new_y variable and inside it I have the math input use its sin function with theta_radians inside of it multipied by the number the x variable is holding, I then add that by the number that theta_radians is holding in the math imports cos function which is being multiplied by the number the y variable is holding.
+    return new_x, new_y #Here I made a return statement that returns the results of the new_x and new_y variables calculations.
+
 result_magnitude, result_direction = get_distance_and_directions(3, 4) #Here I chain the result_magnitude and result direction variables and have them equal the get_distance_and_directions function with 3 and 4 in its parameters so that both variables are tied to the result of the function call.
 print("Magnitude:", round(result_magnitude,2)) #Here I made a print that prints Magnitude: and the magnitude result rounded 2 decimal places.
 print("Direction (degrees): ", round(result_direction, 2)) #Here I made a print that prints Direction (degrees): and the direction result rounded 2 decimal places.
+rotated_x, rotated_y = rotate_point(3, 0, 90) #Here I made a rotated_x variable and a rotated_y variable which are chained together and I have them both call the rotate_point function with 3 for x, 0 for y and 90 for what the theta_degrees.
+print("Rotated point:", round(rotated_x, 2), round(rotated_y, 2)) #Here I made a print statement that prints "Routataed point:" and the the results of the new rotated x and y values rounded two decimal places.
