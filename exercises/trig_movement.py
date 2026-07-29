@@ -36,8 +36,17 @@ def rotate_point(x,y,theta_degrees): #Here I made a function named rotate_point 
     new_y = math.sin(theta_radians) * x + math.cos(theta_radians) * y #Here I made a new_y variable and inside it I have the math input use its sin function with theta_radians inside of it multipied by the number the x variable is holding, I then add that by the number that theta_radians is holding in the math imports cos function which is being multiplied by the number the y variable is holding.
     return new_x, new_y #Here I made a return statement that returns the results of the new_x and new_y variables calculations.
 
+def rotate_then_move(x, y, theta_degrees, distance): #Here I made a function named rotate_then_move with x,y, theta_degrees and distance variables as its parameters/inputs.
+    theta_radians = math.radians(theta_degrees) #Here I made a theta_radians variable and inside it I have the math import use its radians function with theta_degrees inside its parameters so that it can convert the number that theta_degrees has into radians.
+    new_x = x + math.cos(theta_radians) * distance #Here I made a new_x variable and inside of it I have the number the x variable is holding added to the number theta_radians is holding which is converted to cos via the math import using its cos function, it then multiplys the result of that calculation with the number the distance variable is holding.
+    new_y = y + math.sin(theta_radians) * distance #Here I made a new_y variable and inside of it I have the number the y variable is holding added to the number theta_radians is holding which is converted to sin via the math import using its sin function, it then multiplys the result of that calculation with the number the distance variable is holding.
+    return new_x, new_y #Here I made a return statement that returns the results of the new_x and new_y variables calculations.
+
+
 result_magnitude, result_direction = get_distance_and_directions(3, 4) #Here I chain the result_magnitude and result direction variables and have them equal the get_distance_and_directions function with 3 and 4 in its parameters so that both variables are tied to the result of the function call.
 print("Magnitude:", round(result_magnitude,2)) #Here I made a print that prints Magnitude: and the magnitude result rounded 2 decimal places.
 print("Direction (degrees): ", round(result_direction, 2)) #Here I made a print that prints Direction (degrees): and the direction result rounded 2 decimal places.
 rotated_x, rotated_y = rotate_point(3, 0, 90) #Here I made a rotated_x variable and a rotated_y variable which are chained together and I have them both call the rotate_point function with 3 for x, 0 for y and 90 for what the theta_degrees.
 print("Rotated point:", round(rotated_x, 2), round(rotated_y, 2)) #Here I made a print statement that prints "Routataed point:" and the the results of the new rotated x and y values rounded two decimal places.
+final_x, final_y = rotate_then_move(0, 0, 90, 5) #Here I made a final_x and a final_y variable that are chained together and I have them call the rotate_then_move function with 0 for x, 0 for y, 90 for theta_degrees and 5 for distance.
+print("Final position:", round(final_x, 2), round(final_y, 2)) #Here I made a print statement that prints "Final position" along with the new x and new y coordinate values rounded two decimal places.
