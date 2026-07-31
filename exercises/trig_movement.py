@@ -42,6 +42,12 @@ def rotate_then_move(x, y, theta_degrees, distance): #Here I made a function nam
     new_y = y + math.sin(theta_radians) * distance #Here I made a new_y variable and inside of it I have the number the y variable is holding added to the number theta_radians is holding which is converted to sin via the math import using its sin function, it then multiplys the result of that calculation with the number the distance variable is holding.
     return new_x, new_y #Here I made a return statement that returns the results of the new_x and new_y variables calculations.
 
+def rotate_shape(points, theta_degrees): #Here I made a function named rotate_shape with the points and theta_degrees variables ad its parameters/inputs.
+    rotated_points = [] #Here I made a rotated_points variable and inside it I have it store and empty list which is where the rotated points will be added to overtime. 
+    for x, y in points: #Here I made a for loop that will look the points and inspect the x and y variables in each tuple since they are chained together.
+        new_x, new_y = rotate_point(x, y, theta_degrees) #Here I made new_x and new_y variables that are chained together and I have them both call rotate_point with the x,y and theta_degrees variables in its parameters.
+        rotated_points.append((new_x, new_y)) #Here I have the rotated_points list add the numbers that the new_x and new_y variables are holding.
+    return rotated_points #Here I made a return statement that returns the values that are in the list the rotated_points variable is storing.
 
 result_magnitude, result_direction = get_distance_and_directions(3, 4) #Here I chain the result_magnitude and result direction variables and have them equal the get_distance_and_directions function with 3 and 4 in its parameters so that both variables are tied to the result of the function call.
 print("Magnitude:", round(result_magnitude,2)) #Here I made a print that prints Magnitude: and the magnitude result rounded 2 decimal places.
@@ -50,3 +56,6 @@ rotated_x, rotated_y = rotate_point(3, 0, 90) #Here I made a rotated_x variable 
 print("Rotated point:", round(rotated_x, 2), round(rotated_y, 2)) #Here I made a print statement that prints "Routataed point:" and the the results of the new rotated x and y values rounded two decimal places.
 final_x, final_y = rotate_then_move(0, 0, 90, 5) #Here I made a final_x and a final_y variable that are chained together and I have them call the rotate_then_move function with 0 for x, 0 for y, 90 for theta_degrees and 5 for distance.
 print("Final position:", round(final_x, 2), round(final_y, 2)) #Here I made a print statement that prints "Final position" along with the new x and new y coordinate values rounded two decimal places.
+square = [(1, 0), (0, 1), (-1, 0), (0, -1)] #Here I made a square variable and inside it I have it store a list of different tupples for the points on the square.
+rotated_square = rotate_shape(square, 90) #Here I made a rotated square variable and inside it I have it call the rotate_shape function with the square variable for the points using the tupples in the list the square variable is holding, and 90 for the theta_degrees in the functions parameters/inputs.
+print("Rotated square:", rotated_square) #Here I made a print statement that prints "Rotated square" and the number that the rotated square variable is holding which will be the tupples in the square variables list.
