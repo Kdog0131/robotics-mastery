@@ -53,6 +53,10 @@ def get_3d_magnitude(dx,dy,dz): #Here I made a function named get_3d_magnitude w
     magnitude = math.sqrt(dx**2 + dy**2 + dz**2) #Here I made a magnitude variable and inside of it I have the math import use its square root function and inside of it I have the numbers that the dx,dy and dz variables are holding be to the second power, aswell as add them all together.
     return magnitude #Here I made a return statement that returns the results of the magnitude variables calculations.
 
+def get_3d_direction(dx, dy, dz): #Here I made a function named get_3d_directions with dx,dy and dz variables as its parameters/inputs.
+    azimuth = math.atan2(dy, dx) #Here I made an azimuth variable and inside of it I have the math import use its atan2 function with the dy and dx variables inside of its argument so that we can get the direction of the numbers the two variables are holding.
+    elevation = math.atan2(dz, math.sqrt(dx**2 + dy**2)) #Here I made a elevation variable and inside it I have the math imprt use its atan2 function with the dz variable and the math import using its square root function with the dx and dy variables numbers to the second power inside of it.
+    return azimuth, elevation #Here I made a return statement that returns the result of the azimuth and elevation variables calculations.
 
 
 result_magnitude, result_direction = get_distance_and_directions(3, 4) #Here I chain the result_magnitude and result direction variables and have them equal the get_distance_and_directions function with 3 and 4 in its parameters so that both variables are tied to the result of the function call.
@@ -67,3 +71,6 @@ rotated_square = rotate_shape(square, 90) #Here I made a rotated square variable
 print("Rotated square:", rotated_square) #Here I made a print statement that prints "Rotated square" and the number that the rotated square variable is holding which will be the tupples in the square variables list.
 result_3d = get_3d_magnitude(2, 3, 6) #Here I made a result_3d variable and inside it I have it call the get_3d_magnitude function with 2 as dx, 3 as dy and 6 as dz.
 print("3D Magnitude:", round(result_3d, 2)) #Here I made a print statement that prints "3D Magnitude:" and the number that the result_3d variable is holding rounded two decimal places.
+result_azimuth, result_elevation = get_3d_direction(0, 0, 5) #Here I made a result_azimuth and result_elevation variables that are chained together, and I have them both call the get_3d_direction method with 0 as dx, 0 as dy and 5 as dz.
+print("Azimuth (degrees):", round(math.degrees(result_azimuth), 2)) #Here I made a print statement that prints "Azimuth (degrees):" and the number the rezult_azimuth variable is holding rounded two decimal places.
+print("Elevation (degrees):", round(math.degrees(result_elevation), 2)) #Here I made a print statement that prints "Elevation (degrees):" and the number the rezult_elevation variable is holding rounded two decimal places.
