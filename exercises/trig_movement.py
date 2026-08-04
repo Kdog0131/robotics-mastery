@@ -58,6 +58,13 @@ def get_3d_direction(dx, dy, dz): #Here I made a function named get_3d_direction
     elevation = math.atan2(dz, math.sqrt(dx**2 + dy**2)) #Here I made a elevation variable and inside it I have the math imprt use its atan2 function with the dz variable and the math import using its square root function with the dx and dy variables numbers to the second power inside of it.
     return azimuth, elevation #Here I made a return statement that returns the result of the azimuth and elevation variables calculations.
 
+def rotate_point_z(x, y, z, theta_degrees): #Here I made a function named rotate_point_z with x, y, z and theta_degrees variables as its parameters/inputs.
+    theta_radians = math.radians(theta_degrees) #Here I made a theta_radians variable and inside of it I have the math import use the radians function with the theta_degrees variable inside of it so that the number the theta_degrees variable is holding will be converted into radians.
+    new_x = math.cos(theta_radians) * x - math.sin(theta_radians) * y #Here I made a new_x variable and inside of it I have the math import use its cos function with the theta_degrees variable inside of it so that the number the theta_degrees variable is holding will be converted into cos and have it be multiplied by x. I then subtract that result by the number the sin of the number that theta_radians is holding times y.
+    new_y = math.sin(theta_radians) * x + math.cos(theta_radians) * y #Here I made a new_y variable and inside of it I have the math import use its cos function with the theta_degrees variable inside of it so that the number the theta_degrees variable is holding will be converted into sin and have it be multiplied by x. I then add that result by the number the cos of the number that theta_radians is holding times y.
+    new_z = z #Here I made a new_z variable and I have it store the variable z so that it remains the same.
+    return new_x, new_y, new_z #Here i made a return statement that returns the results of the new_x, new_y and new_z variables calculations.
+
 
 result_magnitude, result_direction = get_distance_and_directions(3, 4) #Here I chain the result_magnitude and result direction variables and have them equal the get_distance_and_directions function with 3 and 4 in its parameters so that both variables are tied to the result of the function call.
 print("Magnitude:", round(result_magnitude,2)) #Here I made a print that prints Magnitude: and the magnitude result rounded 2 decimal places.
@@ -74,3 +81,6 @@ print("3D Magnitude:", round(result_3d, 2)) #Here I made a print statement that 
 result_azimuth, result_elevation = get_3d_direction(0, 0, 5) #Here I made a result_azimuth and result_elevation variables that are chained together, and I have them both call the get_3d_direction method with 0 as dx, 0 as dy and 5 as dz.
 print("Azimuth (degrees):", round(math.degrees(result_azimuth), 2)) #Here I made a print statement that prints "Azimuth (degrees):" and the number the rezult_azimuth variable is holding rounded two decimal places.
 print("Elevation (degrees):", round(math.degrees(result_elevation), 2)) #Here I made a print statement that prints "Elevation (degrees):" and the number the rezult_elevation variable is holding rounded two decimal places.
+rotated_x, rotated_y, rotated_z = rotate_point_z(3, 0, 7, 90) #here I made a rotated_x variable, a rotated_y variable and a rotated_z variable chained together, and I have them call the rotate_point_z method with 3 as x, 0 as y, 7 as z and 90 as theta_degrees.
+print("Rotated point (z-axis):", round(rotated_x, 2), round(rotated_y, 2), round(rotated_z, 2)) #Here I made a print statement that prints "Rotated point(z-axis):" and the calculated numbers of the rotated_x, rotated_y and rotated_z variables rounded two decimal places.
+
