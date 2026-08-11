@@ -73,6 +73,12 @@ def rotate_point_x(x, y, z, theta_degrees): #Here I made a function named rotate
     return new_x, new_y, new_z #Here I make a return statement that returns the result of the new_x, new_y and new_z variables calculations.
 
 
+def rotate_point_y(x, y, z, theta_degrees): #Here I made a function named rotate_point_y with x, y, z and theta_degrees variables as it's parameters/inputs.
+    theta_radians = math.radians(theta_degrees) #Here I made a theta_radians variable and inside of it I have the math import use its radians function with the theta_degrees variable inside of its argument so that it converts the number the theta_degrees variable is holding into radians.
+    new_z = math.cos(theta_radians) * z - math.sin(theta_radians) * x #Here I make a new_z variable and inside of it I have the math import use its cos function to convert the number that the theta_radians variable is holding in to cos and have it be multiplied by the number the z variable is holding, I then take that result and subtract it from the sin version of the number the theta_radians variable is holding multiplied by the number the x variable is holding.
+    new_x = math.sin(theta_radians) * z + math.cos(theta_radians) * x #Here I make a new_x variable and inside of it I have the math import use its sin function to convert the number that the theta_radians variable is holding in to cos and have it be multiplied by the number the z variable is holding, I then take that result and add it from the cos version of the number the theta_radians variable is holding multiplied by the number the x variable is holding.
+    new_y = y #Here I made a new_y variable and I have it store the number the y variable is holding.
+    return new_x, new_y, new_z #Here I made a return statement that resturns the results of the new_x, new_y and new_z variables.
 
 
 
@@ -95,3 +101,5 @@ rotated_x, rotated_y, rotated_z = rotate_point_z(3, 0, 7, 90) #here I made a rot
 print("Rotated point (z-axis):", round(rotated_x, 2), round(rotated_y, 2), round(rotated_z, 2)) #Here I made a print statement that prints "Rotated point(z-axis):" and the calculated numbers of the rotated_x, rotated_y and rotated_z variables rounded two decimal places.
 rotated_x, rotated_y, rotated_z = rotate_point_x(7, 3, 0, 90) #Here I made a rotated_x, roatated_y and roatated_z variables that are chained together, and I have them all call the rotated_point_x function with 7 as x, 3 as y, 0 as zero and 90 as theta_degrees.
 print("Rotated point (x-axis):", round(rotated_x, 2), round(rotated_y, 2), round(rotated_z, 2)) #Here I made a print statement that prints "Rotated point (x-axis):" and the results of the rotated_x, rotated_y and rotated_z variables calculations rounded two decimal places. 
+rotated_x, rotated_y, rotated_z = rotate_point_y(0, 7, 3, 90) #Here I made a roated_x, rotated_y and rotated_z variables that are chained togather, and I have them call the rotate_point_y function with 0 for x, 7 for y, 3 for z and 90 for theta_degrees.
+print("Rotated point (y-axis):", round(rotated_x, 2), round(rotated_y, 2), round(rotated_z, 2)) #Here I made a print statement that prints "Rotated point (y-axis):" and the results of the rounded_x, rounded_y and rounded_z variables calculations rounded two decimal places.
