@@ -4,7 +4,14 @@ from trig_movement import get_distance_and_directions, rotate_then_move #Here I 
 
 start_x = 0 #Here I made a start_x variable and have it store the number zero to serve as the x-coordinate.
 start_y = 0 #Here I made a start_y variable and have it store the number zero to serve as the y-coordinate.
+
 waypoints = [(3, 4), (5, 1), (-2, 3)] #Here I made a waypoints variable and I have it store a list of tuples that serves as pairs of coordinates.
+
+waypoint_x = [w[0] for w in waypoints] #Here I made a waypoint_x variable and I have it store a list that will progressivly build itself using the list that the waypoints variable is storing starting from the 0 index.
+waypoint_y = [w[1] for w in waypoints] #Here I made a waypoint_y variable and I have it store a list that will progressivly build itself using the list that the waypoints variable is storing starting from the 1 index.
+plt.plot(waypoint_x, waypoint_y, 'r^', markersize=10, label='Waypoints') #Here I have matplotlib use its plot function with the numbers that the start_x and start_y variables are holding, 'r^' so that its distinguished from the blue and green marker lines, and I set the markersize to 10 and the label set to waypoints to give the point a name.
+
+
 
 current_x = start_x #Here I make a current_x variable and have it store the number the start_x variable is storing.
 current_y = start_y #Here I make a current_y variable and have it store the number the start_y variable is holding.
@@ -21,4 +28,9 @@ for waypoint in waypoints: #Here I made a for loop with waypoint as its loop var
     visited_y.append(current_y) #Here I have visited_y variable add the number the current_y variable is holding into the list its storing.
 
 plt.plot(visited_x, visited_y, 'o-') #Here I have matplotlib use its plot function with the numbers the visited_x and visited_y variables are holding as x and y coordinates respectivly and 'o-' so that it is drawn as a circle.
-plt.show() #Here I have matplotlib use its show function to print out the coordinates
+plt.plot(start_x, start_y, 'gs', markersize=12, label='Start') #Here I have matplotlib use its plot function with the numbers that the start_x and start_y variables are holding, 'gs' so that its distinguished from the blue marker lines, and I set the markersize to 12 and the label set to start to give the point a name.
+plt.xlabel("X Position") #Here I have matplotlib use its xlabel function to label the x-coordinate as x position.
+plt.ylabel("Y Position") #Here I have matplotlib use its ylabel function to label the y-coordinate as y position.
+plt.title("Robot Path Simulation") #Here I have matplotlib use its title function to name the graph "Robot Path Simulation".
+plt.legend() #Here I have matplotlib use its legend function to have the graph show each labeled coordinates with thier corresponding color,marker and name.
+plt.show() #Here I have matplotlib use its show function to print out the coordinates.
